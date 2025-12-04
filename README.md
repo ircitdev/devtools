@@ -139,7 +139,7 @@ cd D:\DevTools
 ### Руководства (в папке Docs/):
 
 - **[PYTHON_PROJECT_GUIDE.md](Docs/PYTHON_PROJECT_GUIDE.md)** - Полное руководство по Python проектам
-- **[PYTHON_GUIDE.md](Docs/PYTHON_GUIDE.md)** - Работа с Python
+- **[BUILD_WITH_AGENT_GUIDE.md](Docs/BUILD_WITH_AGENT_GUIDE.md)** - Создание проектов с AI агентом
 - **[NODEJS_GUIDE.md](Docs/NODEJS_GUIDE.md)** - Работа с Node.js
 - **[DOCKER_GUIDE.md](Docs/DOCKER_GUIDE.md)** - Работа с Docker
 - **[JUPYTER_GUIDE.md](Docs/JUPYTER_GUIDE.md)** - Jupyter Notebook
