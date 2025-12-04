@@ -142,6 +142,7 @@ cd D:\DevTools
 - **[BUILD_WITH_AGENT_GUIDE.md](Docs/BUILD_WITH_AGENT_GUIDE.md)** - Создание проектов с AI агентом
 - **[CLAUDE_CODE_GUIDE.md](Docs/CLAUDE_CODE_GUIDE.md)** - Claude Code для VS Code
 - **[GITLENS_GUIDE.md](Docs/GITLENS_GUIDE.md)** - GitLens расширение для VS Code
+- **[GITHUB_WORKFLOW_GUIDE.md](Docs/GITHUB_WORKFLOW_GUIDE.md)** - Правильная работа с GitHub
 - **[NODEJS_GUIDE.md](Docs/NODEJS_GUIDE.md)** - Работа с Node.js
 - **[DOCKER_GUIDE.md](Docs/DOCKER_GUIDE.md)** - Работа с Docker
 - **[JUPYTER_GUIDE.md](Docs/JUPYTER_GUIDE.md)** - Jupyter Notebook
