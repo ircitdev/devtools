@@ -140,6 +140,7 @@ cd D:\DevTools
 
 - **[PYTHON_PROJECT_GUIDE.md](Docs/PYTHON_PROJECT_GUIDE.md)** - Полное руководство по Python проектам
 - **[BUILD_WITH_AGENT_GUIDE.md](Docs/BUILD_WITH_AGENT_GUIDE.md)** - Создание проектов с AI агентом
+- **[CLAUDE_CODE_GUIDE.md](Docs/CLAUDE_CODE_GUIDE.md)** - Claude Code для VS Code
 - **[NODEJS_GUIDE.md](Docs/NODEJS_GUIDE.md)** - Работа с Node.js
 - **[DOCKER_GUIDE.md](Docs/DOCKER_GUIDE.md)** - Работа с Docker
 - **[JUPYTER_GUIDE.md](Docs/JUPYTER_GUIDE.md)** - Jupyter Notebook
