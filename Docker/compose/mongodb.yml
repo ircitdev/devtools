@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:7
+    container_name: devtools_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: developer
+      MONGO_INITDB_ROOT_PASSWORD: dev_password
+    ports:
+      - "27017:27017"
+    volumes:
+      - D:\DevTools\Docker\volumes/mongodb:/data/db
+    restart: unless-stopped

@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8
+    container_name: devtools_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: devdb
+      MYSQL_USER: developer
+      MYSQL_PASSWORD: dev_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - D:\DevTools\Docker\volumes/mysql:/var/lib/mysql
+    restart: unless-stopped

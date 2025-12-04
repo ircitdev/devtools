@@ -1,0 +1,28 @@
+# IMPORTANT: Never commit these files!
+
+# Credentials and secrets
+.env
+.github-credentials
+*.key
+*.pem
+*.p12
+*password*
+*secret*
+*token*
+
+# Database
+*.sqlite
+*.db
+
+# Logs
+*.log
+logs/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
