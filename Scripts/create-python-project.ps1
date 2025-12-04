@@ -347,7 +347,7 @@ $launchJson = @"
 Set-Content -Path ".vscode\launch.json" -Value $launchJson
 
 # Create .gitignore
-Write-Host "[9/10] Creating .gitignore..." -ForegroundColor Yellow
+Write-Host "[9/12] Creating .gitignore..." -ForegroundColor Yellow
 $gitignore = @"
 # Python
 __pycache__/
@@ -412,6 +412,107 @@ OPENAI_API_KEY=
 "@
 Set-Content -Path ".env.example" -Value $envExample
 
+# Create Claude Code slash commands
+Write-Host "[10/12] Creating Claude Code commands..." -ForegroundColor Yellow
+New-Item -ItemType Directory -Path ".claude\commands" -Force | Out-Null
+
+# Copy common commands
+$commonCommands = @("analyze", "document", "test", "review", "fix")
+foreach ($cmd in $commonCommands) {
+    $source = "$DevTools\Templates\claude-commands\common\$cmd.md"
+    if (Test-Path $source) {
+        Copy-Item $source ".claude\commands\" -Force
+    }
+}
+
+# Copy template-specific commands
+$templateCommands = switch ($Template) {
+    "fastapi" { @("api", "model", "migration") }
+    "flask" { @("api", "model", "migration") }
+    "data-science" { @("notebook") }
+    "cli" { @("cli-command") }
+    default { @() }
+}
+
+foreach ($cmd in $templateCommands) {
+    $source = "$DevTools\Templates\claude-commands\$Template\$cmd.md"
+    if (Test-Path $source) {
+        Copy-Item $source ".claude\commands\" -Force
+    }
+}
+
+# Create Claude commands README
+$claudeReadme = @"
+# Claude Slash Commands
+
+Этот проект включает предустановленные slash команды для Claude Code.
+
+## 📁 Доступные команды
+
+### Общие команды (все проекты):
+
+- ``/analyze`` - Анализ кода и предложения по улучшению
+- ``/document`` - Создание/обновление документации
+- ``/test`` - Генерация тестов для кода
+- ``/review`` - Code review текущих изменений
+- ``/fix`` - Исправление ошибок и багов
+"@
+
+if ($Template -eq "fastapi" -or $Template -eq "flask") {
+    $claudeReadme += @"
+
+### Специфичные команды ($Template):
+
+- ``/api`` - Создание нового API endpoint
+- ``/model`` - Создание модели данных (Pydantic/SQLAlchemy)
+- ``/migration`` - Создание миграции БД (Alembic)
+"@
+}
+
+if ($Template -eq "data-science") {
+    $claudeReadme += @"
+
+### Специфичные команды (Data Science):
+
+- ``/notebook`` - Создание Jupyter notebook для анализа данных
+"@
+}
+
+if ($Template -eq "cli") {
+    $claudeReadme += @"
+
+### Специфичные команды (CLI):
+
+- ``/cli-command`` - Создание новой CLI команды (Typer)
+"@
+}
+
+$claudeReadme += @"
+
+## 💡 Как использовать
+
+В Claude Code просто введите ``/`` и выберите нужную команду из списка.
+
+Например:
+``````
+/test src/main.py
+``````
+
+Claude автоматически выполнит команду и предложит решение.
+
+## ✏️ Кастомизация
+
+Вы можете редактировать файлы в ``.claude/commands/`` чтобы изменить поведение команд или добавить свои.
+
+Каждый файл ``.md`` в этой папке становится slash командой.
+
+## 📚 Подробнее
+
+См. [CLAUDE_CODE_GUIDE.md](https://github.com/ircitdev/devtools/blob/main/Docs/CLAUDE_CODE_GUIDE.md)
+"@
+
+Set-Content -Path ".claude\README.md" -Value $claudeReadme
+
 # Create README
 $readme = @"
 # $ProjectName
@@ -451,7 +552,7 @@ pytest
 Set-Content -Path "README.md" -Value $readme
 
 # Initialize Git
-Write-Host "[10/10] Initializing Git..." -ForegroundColor Yellow
+Write-Host "[12/12] Initializing Git..." -ForegroundColor Yellow
 git init | Out-Null
 git add . | Out-Null
 git commit -m "Initial commit: $ProjectName" | Out-Null
@@ -475,4 +576,8 @@ Write-Host "VS Code:" -ForegroundColor Yellow
 Write-Host "  - Press F5 to debug" -ForegroundColor Gray
 Write-Host "  - Use Claude Code for assistance" -ForegroundColor Gray
 Write-Host "  - Run tests from Testing panel" -ForegroundColor Gray
+Write-Host ""
+Write-Host "Claude Code Slash Commands:" -ForegroundColor Yellow
+Write-Host "  - Type / in Claude Code to see available commands" -ForegroundColor Gray
+Write-Host "  - See .claude/README.md for details" -ForegroundColor Gray
 Write-Host ""

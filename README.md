@@ -141,6 +141,7 @@ cd D:\DevTools
 - **[PYTHON_PROJECT_GUIDE.md](Docs/PYTHON_PROJECT_GUIDE.md)** - Полное руководство по Python проектам
 - **[BUILD_WITH_AGENT_GUIDE.md](Docs/BUILD_WITH_AGENT_GUIDE.md)** - Создание проектов с AI агентом
 - **[CLAUDE_CODE_GUIDE.md](Docs/CLAUDE_CODE_GUIDE.md)** - Claude Code для VS Code
+- **[SLASH_COMMANDS_GUIDE.md](Docs/SLASH_COMMANDS_GUIDE.md)** - Slash команды для Claude Code
 - **[GITLENS_GUIDE.md](Docs/GITLENS_GUIDE.md)** - GitLens расширение для VS Code
 - **[GITHUB_WORKFLOW_GUIDE.md](Docs/GITHUB_WORKFLOW_GUIDE.md)** - Правильная работа с GitHub
 - **[NODEJS_GUIDE.md](Docs/NODEJS_GUIDE.md)** - Работа с Node.js
