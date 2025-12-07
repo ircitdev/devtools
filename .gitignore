@@ -91,6 +91,7 @@ backup/
 Database/*
 !Database/example_notebook.ipynb
 !Database/.gitkeep
+!Database/InstaLeadMagnitBot/
 
 # Jupyter
 .ipynb_checkpoints/

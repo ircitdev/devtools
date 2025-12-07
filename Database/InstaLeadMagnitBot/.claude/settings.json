@@ -1,0 +1,34 @@
+{
+  "project": {
+    "name": "InstaLeadMagnitBot",
+    "description": "Instagram bot для автоматической отправки сообщений в Direct при обнаружении ключевых слов в комментариях к постам",
+    "version": "0.1.0"
+  },
+  "preferences": {
+    "language": "ru",
+    "codeStyle": {
+      "language": "python",
+      "version": "3.11+",
+      "formatter": "black",
+      "linter": "ruff"
+    }
+  },
+  "context": {
+    "techStack": [
+      "Python 3.11+",
+      "instagrapi",
+      "SQLAlchemy",
+      "SQLite/PostgreSQL",
+      "python-telegram-bot",
+      "Celery",
+      "Redis",
+      "loguru"
+    ],
+    "architecture": "modular",
+    "patterns": [
+      "Repository Pattern",
+      "Service Layer",
+      "Event-Driven"
+    ]
+  }
+}
